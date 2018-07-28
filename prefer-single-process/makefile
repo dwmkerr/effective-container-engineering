@@ -1,11 +1,11 @@
-bad-build:
+build-bad:
 	docker build -t dwmkerr/ece-psp-bad -f Dockerfile.bad .
 
-bad-run:
+run-bad: build-bad
 	docker run -it -p 3001:8080 dwmkerr/ece-psp-bad
 
-good-build:
+build-good:
 	docker build -t dwmkerr/ece-psp-good -f Dockerfile.good .
 
-good-run:
+run-good:
 	docker run -it -p 3002:8080 dwmkerr/ece-psp-good
