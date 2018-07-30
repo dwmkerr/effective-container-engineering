@@ -1,0 +1,47 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ece-cwev-basic
+  labels:
+    app: ece-cwev-basic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ece-cwev-basic
+  template:
+    metadata:
+      labels:
+        app: ece-cwev-basic
+    spec:
+      containers:
+      - name: ece-cwev
+        image: ece-cwev
+        ports:
+        - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ece-cwev-advanced
+  labels:
+    app: ece-cwev-advanced
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ece-cwev-advanced
+  template:
+    metadata:
+      labels:
+        app: ece-cwev-advanced
+    spec:
+      containers:
+      - name: ece-cwev
+        image: ece-cwev
+        ports:
+        - containerPort: 8080
+---
+TODO: configmap
+TODO: secret

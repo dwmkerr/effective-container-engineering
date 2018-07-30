@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ece-cwf
+  labels:
+    app: ece-cwf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ece-cwf
+  template:
+    metadata:
+      labels:
+        app: ece-cwf
+    spec:
+      containers:
+      - name: ece-cwf
+        image: ece-cwf
+        ports:
+        - containerPort: 8080
+---
+TODO: configmap
