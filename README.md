@@ -81,3 +81,9 @@ gcloud container clusters create container-engineering
 ```
 
 If you get an 'API not enabled' error, just open the link in the error and hit the 'enable' button on the webpage shown.
+
+When you are done, clean up the cluster with:
+
+```sh
+gcloud container clusters delete container-engineering
+```
