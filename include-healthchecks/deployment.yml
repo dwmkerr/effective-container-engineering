@@ -1,0 +1,69 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ece-psp-bad-deployment
+  labels:
+    app: ece-psp-bad
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ece-psp-bad
+  template:
+    metadata:
+      labels:
+        app: ece-psp-bad
+        version: "1"
+    spec:
+      containers:
+      - name: ece-psp-bad
+        image: dwmkerr/ece-psp-bad
+        ports:
+        - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ece-psp-good-deployment
+  labels:
+    app: ece-psp-good
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ece-psp-good
+  template:
+    metadata:
+      labels:
+        app: ece-psp-good
+        version: "1"
+    spec:
+      containers:
+      - name: ece-psp-good
+        image: dwmkerr/ece-psp-good
+        ports:
+        - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ece-rs-deployment
+  labels:
+    app: ece-rs
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ece-rs
+  template:
+    metadata:
+      labels:
+        app: ece-rs
+        version: "1"
+    spec:
+      containers:
+      - name: ece-rs
+        image: dwmkerr/ece-rs
+        ports:
+        - containerPort: 8080

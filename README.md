@@ -14,6 +14,7 @@ Practical tips and patterns for building good container citizens
     * [Configure with Environment Variables](#configure-with-environment-variables)
     * [Support Real-Time Configuration with Files](#support-real-time-configuration-with-files)
 * [Observability](#observability)
+    * [Include Healthchecks](#include-healthchecks)
     * [Know How To Log](#know-how-to-log)
 * [Appendix 1: Setting up a Kubernetes cluster](#appendix-1-setting-up-a-kubernetes-cluster)
 
@@ -100,6 +101,18 @@ Remember:
 - State mutation can be tricky. Consider how in-flight requests are handled, race conditions etc.
 
 ## Observability
+
+### Include Healthchecks
+
+At the very least, a server should support an explicit healthcheck, to allow monitoring tools to be able to check the status of the server.
+
+See: [`include-healthchecks`](./include-healthchecks) for an example.
+
+Remember:
+
+- You may well want to differentiate between *healthy* and *ready*. Serfers which are not ready might be starting up, or have a backend unavailable, ideally a system should wait for them. Servers which are consistently not healthy should be stopped.
+- A 'shallow' healthcheck will check that the component is healthy. A 'deep' healthcheck will check dependent services.
+- Healthchecks might offer extra data - uptime, versions of packages, version of the code and so on. But be careful not to inadvertantly expose this data to the outside world.
 
 ### Know How To Log
 
