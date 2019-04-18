@@ -16,6 +16,7 @@ Practical tips and patterns for building good container citizens
 * [Observability](#observability)
     * [Include Healthchecks](#include-healthchecks)
     * [Know How To Log](#know-how-to-log)
+* [Follow 12-Factor Principles](#follow-12-factor-principles)
 * [Appendix 1: Setting up a Kubernetes cluster](#appendix-1-setting-up-a-kubernetes-cluster)
 
 <!-- vim-markdown-toc -->
@@ -122,6 +123,12 @@ Remember:
 - Make sure you use correlation ids
 - Consider how libraries are going to log, or even if they should
 - Log everything, let your logging tool handle stripping out junk
+
+## Follow 12-Factor Principles
+
+Containerised applications should follow the Twelve Factor Principles:
+
+- https://12factor.net/
 
 ## Appendix 1: Setting up a Kubernetes cluster
 
