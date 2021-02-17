@@ -1,5 +1,7 @@
 # effective-container-engineering
 
+[![GuardRails badge](https://badges.production.guardrails.io/dwmkerr/effective-container-engineering.svg?token=e861182bc662d0c24e25a43f7b342e1e62c01e41d4b3416d3b1a6b98b12ccc03&ts=1539441993368)](https://www.guardrails.io)
+
 Practical tips and patterns for building good container citizens
 
 
